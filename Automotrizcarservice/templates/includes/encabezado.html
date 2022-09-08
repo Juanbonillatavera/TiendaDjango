@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<header>
+    <div class="contenedor">
+
+        <div class="marca">
+            <h1><span class="resaltado">El mejor</span> servicio Automotriz</h1>
+            <div class="logo">
+                <img src="{% static 'imagenes/Index_logo.png' %}" alt="" width="140">
+            </div>
+           
+        </div>
+<!-- ENCABEZADO FINAL -->
+
+
+<!-- MENU DE NAVEGACION INICIO  -->
+
+
+        <nav>
+            <ul>
+                <li class="actual"><a href="{% url 'home' %}">Inicio</a></li>
+                <li class="actual"><a href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li class="actual"><a href="{% url 'servicios' %}">Servicios</a></li>
+                <li class="actual"><a href="{% url 'contactenos' %}">Contáctenos</a></li>
+                <li class="actual"><a href="{% url 'registro' %}">Registro</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<!-- MENU DE NAVEGACION FIN -->

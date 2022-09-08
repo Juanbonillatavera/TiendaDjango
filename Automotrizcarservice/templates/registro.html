@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<section id="principal">
+    <div class="contenedor">
+        <article id="col-principal">
+            <h3>Registro usuario</h3>
+            <div class="mb-3 row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" name="email">
+
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="submit" value="Enviar" class="boton" onclick="alert('Se ha enviado el mensaje')">
+                </div>
+            </div>
+
+ {% endblock %}
+
+
+
+ 

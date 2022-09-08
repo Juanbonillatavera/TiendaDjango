@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+    <section id="cabecera">
+        <div class="contenedor">
+            <h1>Expertos en el mantenimiento de tu vehículo</h1>
+        </div>
+    </section>
+
+    <section id="cajas">
+        <div class="contenedor">
+            <div class="caja">
+                <h3> Reparación de tu vehículo</h3>
+                <img src="{%static 'imagenes/index_mecanico.jpg'%}" alt="mecanico">
+                <br>
+                <br>
+                <h3>Venta y montaje de llantas </h3>
+                <div class="caja"><img src="{%static 'imagenes/index_venta_y_montaje_de_llantas.jpg'%}" alt="">
+                    <br>
+                    <br>
+                    <br>
+                    <h3>personalización</h3>
+                    <div class="caja"><img src="{%static 'imagenes/Index_reparacion_personalizacion.jpg'%}" alt="">
+                    </div>
+    </section>
+    {% endblock %}
+
+   
+
+

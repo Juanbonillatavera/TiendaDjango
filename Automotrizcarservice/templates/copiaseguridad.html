@@ -1,0 +1,129 @@
+{% load static %}
+
+<!-- ENCABEZADO INICIO  -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automotriz car service">
+    <meta name="keywords" content="Servicio mecanico,cambio de llantas,venta de llantas">
+    <meta name="author" content="Juan Esteban Bonilla Tavera ">
+    <script src="https://kit.fontawesome.com/966daee6cb.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Automotriz car service</title>
+    <link rel="stylesheet" href="{%static 'css/estilo2.css'%}">
+    <link rel="stylesheet" href="{static 'css/normal.css'%}">
+    <link rel="stylesheet" href="Css/font.css">
+
+</head>
+
+<body>
+    
+
+
+    <header>
+        <div class="contenedor">
+
+            <div class="marca">
+                <h1><span class="resaltado">El mejor</span> servicio Automotriz</h1>
+                <div class="logo">
+                    <img src="{%static 'imagenes/Index_logo.png'%}" alt="" width="140">
+                </div>
+               
+            </div>
+<!-- ENCABEZADO FINAL -->
+
+
+<!-- MENU DE NAVEGACION INICIO  -->
+
+            <nav class="navbar navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="quienes_somos.html">nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        servicios
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="servicios.html">catalogo</a></li>
+                        <li><a class="dropdown-item" href="contactenos.html">contactenos</a></li>
+                      
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled">Disabled</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </nav>
+
+
+    </header>
+<!-- MENU DE NAVEGACION FIN -->
+
+{% block content %}
+    <section id="cabecera">
+        <div class="contenedor">
+            <h1>Expertos en el mantenimiento de tu vehículo</h1>
+        </div>
+    </section>
+
+    <section id="cajas">
+        <div class="contenedor">
+            <div class="caja">
+                <h3> Reparación de tu vehículo</h3>
+                <img src="{%static 'imagenes/index_mecanico.jpg'%}" alt="mecanico">
+                <br>
+                <br>
+                <h3>Venta y montaje de llantas </h3>
+                <div class="caja"><img src="{%static 'imagenes/index_venta_y_montaje_de_llantas.jpg'%}" alt="">
+                    <br>
+                    <br>
+                    <br>
+                    <h3>personalización</h3>
+                    <div class="caja"><img src="{%static 'imagenes/Index_reparacion_personalizacion.jpg'%}" alt="">
+                    </div>
+    </section>
+    {% endblock %}
+
+    <!--  FOOTER INICIO -->
+    <footer>
+        <i class="fa-brands fa-creative-commons-by"></i>
+
+        <p>Automotriz Car service Copyright &copy; 2022</p>
+        <p>Encuéntrenos en la dirección Mirolindo 3a, Ibagué, Tolima
+
+            Horario de atencion lunes a sábado 8:00am a 6:00pm
+
+            Telefono:189829818191 celular:3504417602
+        </p>
+
+    </footer>
+
+
+<!-- FOOTER FIN -->
+
+
+
+
+</body>
+
+</html>

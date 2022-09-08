@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+            <section id="boletin">
+                <div class="contenedor">
+                    <article id="col-principal">
+
+                        <ul class="ajuste">
+                            <li class="cajab">
+                                <h3>Reparación del vehículo</h3>
+                                <p>Contamos con los mejores mecánicos que reparan a la perfección a tu vehículo</p>
+                                <br>
+                                <br>
+                                <br>
+                            </li>
+                            <br>
+                            <br>
+                            <br>
+                            <li class="cajab2">
+                                <br>
+                                <h3>Cambio de llantas</h3>
+                                <p>Cuando tu vehículo necesite llantas de calidad o cambio por daño</p>
+                                <br>
+                                <br>
+                            </li>
+                            <br>
+                            <br>
+                            <li class="cajab3">
+
+                                <br>
+                                <h3>Personalización de tu vehículo </h3>
+                                <p>Personalizamos tu vehículo a tu gusto </p>
+                                <br>
+                            </li>
+
+
+                        </ul>
+                    </article>
+                    <aside id="lateral">
+                        <div class="claro">
+                            <img src="{% static 'imagenes/servicio_reparacion_de_vehiculos.PNG' %}" width="220">
+                        </div>
+
+                    </aside>
+
+                    <aside id="lateral">
+                        <div class="claro">
+                            <img src="{% static 'imagenes/servicio_cambio_de_llantas.PNG' %}" width="220">
+
+                        </div>
+
+                    </aside>
+
+                    <aside id="lateral2">
+                        <div class="claro">
+                            <img src="{%static 'imagenes/servicio_personalizacion_vehiculo.PNG' %}" width="220">
+                        </div>
+                    </aside>
+
+                </div>
+            </section>
+            {% endblock %}
+
+
