@@ -30,6 +30,7 @@ urlpatterns = [
    path('contactenos/', views.verInfomacionContacto, name="contactenos"),
    path('quienes_somos/',views.verInformacionEmpresa,name="nosotros" ),
     path('accounts/', include('accounts.urls')),
+    path('accounts/registro',include('accounts.urls')),
 
     
     
