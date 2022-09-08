@@ -5,27 +5,65 @@
 
 
 
-<section id="principal">
-    <div class="contenedor">
-        <article id="col-principal">
-            <h3>Registro usuario</h3>
-            <div class="mb-3 row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="text" name="email">
+<div>
+    <h2>Registrarse</h2>
+</div>
 
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
-                    <input type="submit" value="Enviar" class="boton" onclick="alert('Se ha enviado el mensaje')">
-                </div>
-            </div>
+<div class="col-12">
 
- {% endblock %}
+    <form action="{%url 'registro'%}" method="POST">
+        {% csrf_token %}
+
+        <div class="col-12">
+
+            <label for="nombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control" name="first_name" id="nombres" placeholder="" value="" required="">
+
+        </div>
+
+        <div class="col-12">
+
+            <label for="nombres" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" name="last_name" id="nombres" placeholder="" value="" required="">
+
+        </div>
+
+        <div class="col-12">
+
+            <label for="nombres" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" name="usarname" id="nombres" placeholder="" value="" required="">
+
+        </div>
+
+        <div class="col-12">
+
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" name="correo" id="email" placeholder="correo@ejemplo.com">
+
+        </div>
+
+        <div class="col-12">
+
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" name="password" id="password">
+
+        </div>
 
 
+        <div class="col-12">
 
- 
+            <label for="tipousuario" class="form-label">Tipo de usuario</label>
+            <select class="form-control" name="rol" id="tipousuario">
+                <option value="admin">Administrador del sistema</option>
+                <option value="gerente">Gerente</option>
+                <option value="cliente">cliente</option>
+            </select>
+        </div>
+</div>
+    <hr class="my-4">
+|   <button class="w-100 btn boton1 btn-lg" type="submit" >Guardar datos</button>
+
+    </form>
+</div>
+
+{% endblock %}
