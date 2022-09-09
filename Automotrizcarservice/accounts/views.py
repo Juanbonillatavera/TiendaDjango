@@ -60,7 +60,7 @@ def login(request):
             return render (request, 'index.html')
 
         else:
-            return render(request,'login.html',{'alarma: Correo o contraseña invalida'})
+            return render(request,'login.html',{'alarma': 'Correo o contraseña invalida'})
 
     else:
         return render(request,'login.html')
