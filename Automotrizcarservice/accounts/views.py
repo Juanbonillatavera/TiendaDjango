@@ -3,6 +3,7 @@ import email
 from multiprocessing import context
 from django.shortcuts import render
 from accounts.models import Account
+from django.contrib import auth
 
 # Create your views here.
 
@@ -30,7 +31,6 @@ def registrarse(request):
             ok=False   
 
         #todo ok
-
         if ok:
             existe=Account.objects.filter(email=email).exists()
             if not existe:
@@ -40,5 +40,27 @@ def registrarse(request):
                 context['mensaje']='Usuario guardado con exito'
             else:
                 context['alarma']= '¡ El correo ya existe!'
+        
 
+    print('--------')
+    print(context)
     return render(request, 'registro.html',context)
+
+
+    #Control de ingreso de usuarios#
+
+def login(request):
+    if request.method == 'POST':
+        email=request.POST['email']
+        password= request.POST['password']
+        user= auth.authenticate(emai=email, password=password)
+
+        if user is not None:
+            auth.login(request,user)
+            return render (request, 'index.html')
+
+        else:
+            return render(request,'login.html',{'alarma: Correo o contraseña invalida'})
+
+    else:
+        return render(request,'login.html')

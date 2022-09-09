@@ -32,6 +32,16 @@
 
 
   <!-- ENCABEZADO final -->
+  {% if alarma %}
+    <div class="alert alarma">
+      <p>{{alarma}}</p>
+    </div>
+    {% endif %}
+    {%if mensaje %}
+      <div class="alert mensaje">
+        <p>{{mensaje}}</p>
+      </div>
+    {% endif %}
 
   <main>
   {% block content %}
