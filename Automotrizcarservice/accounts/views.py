@@ -1,10 +1,11 @@
 from ast import Return
+from contextlib import redirect_stderr
 import email
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from accounts.models import Account
 from django.contrib import auth
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def registrarse(request):
@@ -15,7 +16,7 @@ def registrarse(request):
         password= request.POST['password']
         confirmPassword= request.POST['confirmPassword']
         username=request.POST['username']
-        email=request.POST['correo']
+        email=request.POST['email']
 
     #validacion de campos
 
@@ -50,10 +51,12 @@ def registrarse(request):
     #Control de ingreso de usuarios#
 
 def login(request):
+
+
     if request.method == 'POST':
         email=request.POST['email']
         password= request.POST['password']
-        user= auth.authenticate(emai=email, password=password)
+        user= auth.authenticate(email=email, password=password)
 
         if user is not None:
             auth.login(request,user)
@@ -64,3 +67,17 @@ def login(request):
 
     else:
         return render(request,'login.html')
+
+
+
+@login_required(login_url='login')
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
+
+
+
+
+
+
+
