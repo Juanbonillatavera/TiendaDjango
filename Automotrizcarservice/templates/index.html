@@ -7,32 +7,49 @@
 {% block content %}
 
 
-    <section id="cabecera">
-        <div class="contenedor">
-            <h1>Expertos en el mantenimiento de tu vehículo</h1>
+<section id="cabecera">
+    <div class="contenedor">
+        <h1>Expertos en el mantenimiento de tu vehiculo</h1>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static  'imagenes/mecanico-arreglando-auto.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'imagenes/taller-mecanico.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'imagenes/repuestos.jpg' %}" class="d-block w-100" alt="Todo tipo de repuestos">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="cajas">
-        <div class="contenedor">
-            <div class="caja">
-                <h3> Reparación de tu vehículo</h3>
-                <img src="{%static 'imagenes/index_mecanico.jpg'%}" alt="mecanico">
+<section id="cajas">
+    <div class="contenedor">
+        <div class="caja">
+            <h3> Reparación de tu vehículo</h3>
+            <img src="{%static 'imagenes/index_mecanico.jpg'%}" alt="mecanico">
+            <br>
+            <br>
+            <h3>Venta y montaje de llantas </h3>
+            <div class="caja"><img src="{%static 'imagenes/index_venta_y_montaje_de_llantas.jpg'%}" alt="">
                 <br>
                 <br>
-                <h3>Venta y montaje de llantas </h3>
-                <div class="caja"><img src="{%static 'imagenes/index_venta_y_montaje_de_llantas.jpg'%}" alt="">
-                    <br>
-                    <br>
-                    <br>
-                    <h3>personalización</h3>
-                    <div class="caja"><img src="{%static 'imagenes/Index_reparacion_personalizacion.jpg'%}" alt="">
-                    </div>
-    </section>
-    {% endblock %}
-
-
-    
-   
-
-
+                <br>
+                <h3>personalización</h3>
+                <div class="caja"><img src="{%static 'imagenes/Index_reparacion_personalizacion.jpg'%}" alt="">
+                </div>
+</section>
+{% endblock %}

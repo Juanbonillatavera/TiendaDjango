@@ -2,69 +2,10 @@ body {
     font-family: 15px 'Open Sans', sans-serif;
     padding: 0px;
     margin: 0px;
-    background-color: black;
+    background-color: white;
 }
 
-.social-bar {
-    position: fixed;
-    right: 0;
-    top: 35%;
-    font-size: 1.5rem;
-    display: flex;
-}
 
-.icon {
-    color: white;
-    text-decoration: none;
-    padding: .7rem;
-    display: flex;
-    transition: all .5s;
-}
-
-.icon-facebook:before {
-    content: "\ea90";
-}
-
-.icon-facebook {
-    background: #2E406E;
-}
-
-.icon-twitter:before {
-    content: "\ea96";
-}
-
-.icon-twitter {
-    background: #339dc5;
-}
-
-.icon-youtube {
-    background: #E83028;
-}
-
-.icon-instagram:before {
-    content: "\ea92";
-}
-
-.icon-instagram {
-    background: #3F60A5;
-}
-
-.icon-whatsapp:before {
-    content: "\ea93";
-}
-
-.icon-whatsapp {
-    background: rgb(12, 201, 12);
-
-}
-
-.icon:first-child {
-    border-radius: 1 rem 0 0 0;
-}
-
-.icon:last-child {
-    border-radius: 1 rem 0 0 0;
-}
 
 
 /* estilos generales*/
@@ -106,18 +47,18 @@ header {
     color: #fff;
     padding-top: 30px;
     min-height: 70%;
-    border-bottom: 5px solid #1293d4;
+    
     /* -webkit-box-shadow: 10px 10px 89px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 89px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 89px 0px rgba(0,0,0,0.75); */
 }
 
 header a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
-    font-family: 18px 'Open Sans', sans-serif;
+    font-family: 18px'Open Sans', sans-serif;
 
 }
 
@@ -153,37 +94,39 @@ header .resaltado
 
 }
 header .actual a{
-color: white;
+color: black;
     font-weight: bold;
 }
 
 header a:hover {
-    color: #ccc;
+    color: black;
     font-weight: bold;
 }
 
 /*estilo cabecera*/
 #cabecera {
-    min-height: 500px;
-    background: url("../imagenes/index_cabecera.PNG");
+    min-height: 400px;
+    background: url("..");
     background-repeat: no-repeat;
     transition:none;
+
+    
     background-size: 100% 100%;
     text-align: center;
-    color: #fff;
+    color:black;
     border-bottom: 5px solid #1293d4;
 }
 
 #cabecera h1 {
     margin-top: 90px;
-    font-size: 55px;
-    margin-bottom: 50px;
+    font-size: 10px;
+    margin-bottom: auto;
 }
 
 #boletin {
     padding: 20px;
-    color: white;
-    background: black;
+    color: black;
+    background: rgb(232, 14, 14);
     margin-top: 20px;
 }
 
@@ -195,7 +138,8 @@ header a:hover {
 
 #cajas {
     margin-top: 100px;
-    /*-webkit-box-shadow: 10px 10px 89px 0px rgba(0, 0, 0, 0.75);
+    background-color: white;
+    /* -webkit-box-shadow: 10px 10px 89px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 89px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 89px 0px rgba(0, 0, 0, 0.75);*/
 
@@ -205,16 +149,16 @@ header a:hover {
     float: left;
     text-align: center;
     width: 100%;
+    background-color: white;
 
 
 }
 
 #cajas .caja img {
     width: 600px;
-    -webkit-box-shadow: 10px 10px 89px 10px rgba(219, 205, 205, 0.568);
-    -moz-box-shadow: 10px 10px 89px 10px rgba(196, 168, 168, 0.75);
-    box-shadow: 10px 10px 89px 10px rgba(209, 178, 178, 0.514);
-    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 89px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 89px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 89px 0px rgba(0, 0, 0, 0.75);
 
 }
 
@@ -222,8 +166,7 @@ header a:hover {
 h2,
 h3,
 p {
-    color: white;
-    text-justify: auto;
+    color: black;
 
 }
 
@@ -235,7 +178,6 @@ aside#lateral {
     float: right;
     width: 30%;
     margin-top: 5%;
-    border-radius: 20px;
 
 }
 
@@ -243,7 +185,6 @@ aside#lateral1 {
     float: right;
     width: 30%;
     margin-top: 5%;
-    border-radius: 20px;
 
 }
 
@@ -251,54 +192,25 @@ aside#lateral2 {
     float: right;
     width: 30%;
     margin-top: 5%;
-    border-radius: 20px;
 
 }
 
 .oscuro {
     padding: 15px;
-    background-color: #CB4535;
-    color: #fff;
+    background-color: cornflowerblue;
+    color: black;
     margin-top: 10px;
     margin-bottom: 10px;
     align-content: center;
 }
 
-.claro {
-    padding: 1px 1px 1px 11px;
-    background-color: #CB4535;
-    margin-top: 5px;
+/*.claro {
+    padding: 0px;
+    background-color: #f4f4f4;
+    margin-top: 10px;
     margin-bottom: 10px;
-    align-content: right;
-    border-radius: 15px;
-   
-}
-.cajab{
-    border-radius: 10px;
-    background-color: #1293d4;
-}
-
-.cajab2{
-    margin-top: 80px;
-    border-radius: 10px;
-    background-color: #1293d4;
-}
-
-.cajab3{
-    margin-top: 60px;
-    border-radius: 10px;
-    background-color: #1293d4;
-   text-align:justify;
-}
-
-.ajuste{
-    margin-top: -160px;
-}
-.claro img{
-    border-radius: 20px;
-    display: flexbox;
-    margin-top: 15px;
-}
+    align-content: center;
+}*/
 
 /*estilo para columna principal*/
 article#col-principal {
@@ -306,24 +218,22 @@ article#col-principal {
     width: 55%;
     margin-bottom: 140px;
     justify-content: space-between;
-    margin-top: 200px;
+    margin-top: 90px;
     align-items: center;
     display: flexbox;
 }
 
-.reseña{
-    border-radius: 20px;
-}
+
 
 
 
 /*estilos de la lista desordenda*/
 ul#servicios li {
     list-style: none;
-    padding: 100px;
+    padding: 50px;
     border: 4px solid #ccc;
     margin-bottom: 40px;
-    background-color: #e6e6e6;
+    background-color: black;
     height: 120px;
     text-align: center;
 }
@@ -352,19 +262,25 @@ textarea {
 
 input[type="submit"] {
     background-color:#1293d4;
-    color: #fff;
+    color: black;
 }
 
 #otro {
-    color: white;
+    color: black;
 }
 
 footer {
     padding: 20px;
-    margin-top: 80px;
-    color: #fff;
-    background-color: #1293d4;
+    margin-top: 20px;
+    color:white;
+    background-color: black;
     text-align: center;
+
+}
+footer p{
+    padding: 20px;
+    margin-top: 20px;
+    color:white;
 }
 
 /*estilos para media queries adaptable a cualquier dispositivo*/
@@ -402,7 +318,6 @@ footer {
 
     img {
         width: 100%;
-        border-radius: 20px;
     }
 }
 
@@ -410,3 +325,25 @@ h1,p {
     font-family: 'Lato', sans-serif;
     font-family: 'Open Sans', sans-serif;
 }
+
+/**Estilos de productos**/
+.product {
+    border: 1px solid ;
+    padding: 20px;
+}
+
+.container-products{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr );
+}
+
+
+
+.w-100 {
+    width: 100%!important;
+    height: 450px
+
+}
+
+
+
