@@ -13,6 +13,8 @@ def registrarse(request):
 
     if request.method == 'POST':
         rol=request.POST['rol']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
         password= request.POST['password']
         confirmPassword= request.POST['confirmPassword']
         username=request.POST['username']
@@ -35,8 +37,8 @@ def registrarse(request):
         if ok:
             existe=Account.objects.filter(email=email).exists()
             if not existe:
-                user=Account.objects.create_user(first_name=username,last_name=username,
-                username=username,email=email,password=password)
+                user=Account.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
+                user.rol = rol
                 user.save()
                 context['mensaje']='Usuario guardado con exito'
             else:

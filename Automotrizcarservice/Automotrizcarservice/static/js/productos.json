@@ -1,0 +1,24 @@
+[
+	{
+		"precio": 63000,
+		"id": 1,
+		"title": "amortiguadores",
+		"thumbnailUrl": "imagenes/1-Juego-de-Amortiguador-delantero-Piezas-de-motor-de-coche-BYD-S6-SUV-con-resorte-y.jpg_Q90.jpg_.webp"
+	},
+
+	{
+		"precio": 50000,
+		"id": 2,
+		"title": "radiador",
+		"thumbnailUrl": "imagenes/radiador.webp"
+	},
+
+	{
+		"precio": 40000,
+		"id": 3,
+		"title": "tijeras",
+		"thumbnailUrl": "imagenes/tijetas.jpg"
+	}
+
+
+]
