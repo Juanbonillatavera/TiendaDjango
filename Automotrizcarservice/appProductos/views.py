@@ -4,7 +4,7 @@ from operator import concat
 from django.shortcuts import render
 from .models  import Producto, Carrito 
 
-from asyncio.windows_events import null
+
 from django.http import JsonResponse
 import json
 
