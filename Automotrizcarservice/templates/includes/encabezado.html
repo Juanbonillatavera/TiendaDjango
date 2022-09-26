@@ -23,48 +23,39 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{% url 'servicios' %}" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Servicios
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="productos.html">Productos</a></li>
-                        <li><a class="dropdown-item" href="{% url 'servicios' %}">Servicios</a></li>
-
-                    </ul>
+                {% if user.id is None %}
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contactenos' %}">Contactanos</a>
+                    <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'registro' %}">registrarse</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'productos' %}">productos</a>
-                </li>
-
+                {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'ver_carrito' %}">carrito</a>
                 </li>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
-                </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Salir</a>
                 </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'productos' %}">productos</a>
                 </li>
+            
             </ul>
         </div>
     </div>

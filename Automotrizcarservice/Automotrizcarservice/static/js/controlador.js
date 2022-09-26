@@ -5,8 +5,8 @@
  */
 
 function cambiarCantidad(id){
-    let cantidad= document.getElementById('cantidad'+ id).value;
-    let url = "http://localhost:8000/productos/camabiarCantidad";
+    let cantidad= document.getElementById('cantidad_'+ id).value;
+    let url = "http://localhost:8000/productos/cambiarCantidad/";
     let datos = {
         'id': id,
         'cantidad': cantidad
@@ -16,7 +16,7 @@ function cambiarCantidad(id){
 }
 
 function cambiarCantidadResp(data){
-    alert(data['mensaje'])
+    //alert(data['mensaje'])
 }
 
 
@@ -69,7 +69,7 @@ function getCookie(name) {
 
         const cookies= document.cookie.split(";");
         for (let i=0 ; i < cookies.length; i++){
-            const cookie = document.cookies[i].trim();
+            const cookie = cookies[i].trim();
             
             // DOES THIS COKIE STRING BEGIN WITH THE NAME WE WANT ?
 

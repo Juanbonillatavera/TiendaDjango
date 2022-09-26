@@ -54,33 +54,34 @@ def agregar (request, id= NULL):
 def verCarrito(request):
     regUser= request.user
     carrito= Carrito.objects.filter(cliente=regUser, estado='carrito')
+    context = {}
+    if carrito:
+        listaCarrito=[]
+        total= 0
+        for prod in carrito:
 
-    listaCarrito=[]
-    total= 0
-    for prod in carrito:
+            unProducto={
+            'cantidad': prod.cantidad,
+            'icono': prod.producto.icono,
+            'nombre': prod.producto.precio,
+            'unidad' : prod.producto.unidad,
+            'total' : int (prod.cantidad) * int(prod.producto.precio),
+            'prodId' : prod.producto.id,
+            'id' : prod.id,
+            }
 
-        unProducto={
-        'cantidad': prod.cantidad,
-        'icono': prod.producto.icono,
-        'nombre': prod.producto.precio,
-        'unidad' : prod.producto.unidad,
-        'total' : int (prod.cantidad) * int(prod.producto.precio),
-        'prodId' : prod.producto.id,
-        'id' : prod.id,
+            listaCarrito.append(unProducto)
+            total += unProducto['total']
 
+        context={
+            'carrito': listaCarrito,
+            'subtotal': total,
+            'iva': total * 0.19,
+            'envio': 8000,
+            'total' : total * 1.19 + 8000,
         }
-
-    listaCarrito.append(unProducto)
-    total += unProducto['total']
-
-    context={
-        'carrito': listaCarrito,
-        'subtotal': total,
-        'iva': total * 0.19,
-        'envio': 8000,
-        'total' : total * 1.19 + 8000,
-    }
-
+    else:
+        context['mensaje'] = 'El carrito está vacio.'
     return render(request,'productos/carrito.html', context)
 
 
@@ -95,7 +96,8 @@ def eliminarItemCarrito(request,id):
 
 
 def cambiarCantidad(request):
-    is_ajax = request.Meta.get('WTTP_X_REQUESTED_WITH')=='XMLHttpRequest'
+    is_ajax = request.META.get('HTTP_X_REQUESTED_WITH')=='XMLHttpRequest'
+    
 
     if is_ajax:
         if request.method == 'POST':
@@ -112,7 +114,6 @@ def cambiarCantidad(request):
             return JsonResponse({'mensage': ' cantidad modificada a ' + str(cantidad)})
 
         return JsonResponse({'alarma': 'no se pudo modificar....'}, status=400)
-
-
     else:
-        return verCarrito(request)
+        #return verCarrito(request)
+        return JsonResponse({'alarma': 'no se pudo modificar....No AJAX'})

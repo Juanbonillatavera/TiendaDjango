@@ -11,7 +11,7 @@
     <h2>Carrito de Compras</h2>
 </div>
 
-
+{% if carrito %}
 <table class="table" style="width: 90%;">
     <thead>
         <tr>
@@ -28,8 +28,8 @@
         {% for prod in carrito %}
 
         <tr>
-            <th><input type="number" name="cantidad" id="" value="{{prod.cantidad}}" min="0" style="width:80px;"></th>
-            <td><img src="{{prod.icono.url}}" alt="x"></td>
+            <th><input type="number" name="cantidad" id="cantidad_{{prod.id}}" onchange="cambiarCantidad({{prod.id}})" value="{{prod.cantidad}}" min="0" style="width:80px;"></th>
+            <td><img src="{{prod.icono.url}}" class="imgCarrito" alt="x"></td>
             <td>{{prod.nombre}}</td>
             <td>{{prod.valor}}/{{prod.unidad}}</td>
             <td>{{prod.total}}</td>
@@ -65,7 +65,7 @@
 
 </div>
 
-
+{% endif  %}
 
 
 

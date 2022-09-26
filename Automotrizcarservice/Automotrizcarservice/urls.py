@@ -28,7 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('servicios/', views.verServicios, name="servicios"),
-    path('contactenos/', views.verInfomacionContacto, name="contactenos"),
     path('quienes_somos/',views.verInformacionEmpresa,name="nosotros" ),
     path('accounts/', include('accounts.urls')),
     path('productos/', include('appProductos.urls')),

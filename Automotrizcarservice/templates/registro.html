@@ -4,81 +4,82 @@
 {% block content %}
 
 <section id="boletin">
-<div class="contenedor">
+    <div class="contenedor">
 
-    <div class="py-5 text-center">
-        <h2>Registrarse</h2>
+        <div class="py-5 text-center">
+            <h2>Registrarse</h2>
+        </div>
+
+
+
+        <div class="col-12">
+
+            <form action="{%url 'registro'%}" method="POST">
+                {% csrf_token %}
+
+                <div class="col-12">
+
+                    <label for="nombres" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" name="first_name" id="nombres" placeholder="" value=""
+                        required="">
+
+                </div>
+
+                <div class="col-12">
+
+                    <label for="nombres" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" name="last_name" id="nombres" placeholder="" value=""
+                        required="">
+
+                </div>
+
+                <div class="col-12">
+
+                    <label for="nombres" class="form-label">Nombre de usuario</label>
+                    <input type="text" class="form-control" name="username" id="nombres" placeholder="" value=""
+                        required="">
+
+                </div>
+
+                <div class="col-12">
+
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email" id="correo" placeholder="correo@ejemplo.com">
+
+                </div>
+
+                <div class="col-12">
+
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+
+                <div class="col-12">
+
+                    <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                        placeholder="">
+
+                </div>
+
+
+                <div class="col-12">
+
+                    <label for="tipousuario" class="form-label">Tipo de usuario</label>
+                    <select class="form-control" name="rol" id="tipousuario">
+                        <option value="admin">Administrador del sistema</option>
+                        <option value="gerente">Gerente</option>
+                        <option value="cliente">cliente</option>
+                    </select>
+                </div>
+        </div>
+        <hr class="my-4">
+        | <button id="w-1000 btn boton1 btn-lg" type="submit">Guardar datos</button>
+
+        </form>
     </div>
 
-
-
-    <div class="col-12">
-
-        <form action="{%url 'registro'%}" method="POST">
-            {% csrf_token %}
-
-            <div class="col-12">
-
-                <label for="nombres" class="form-label">Nombres</label>
-                <input type="text" class="form-control" name="first_name" id="nombres" placeholder="" value=""
-                    required="">
-
-            </div>
-
-            <div class="col-12">
-
-                <label for="nombres" class="form-label">Apellidos</label>
-                <input type="text" class="form-control" name="last_name" id="nombres" placeholder="" value=""
-                    required="">
-
-            </div>
-
-            <div class="col-12">
-
-                <label for="nombres" class="form-label">Nombre de usuario</label>
-                <input type="text" class="form-control" name="username" id="nombres" placeholder="" value=""
-                    required="">
-
-            </div>
-
-            <div class="col-12">
-
-                <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" name="email" id="correo" placeholder="correo@ejemplo.com">
-
-            </div>
-
-            <div class="col-12">
-
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" name="password" id="password">
-            </div>
-
-            <div class="col-12">
-
-                <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
-                <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="">
-
-            </div>
-
-
-            <div class="col-12">
-
-                <label for="tipousuario" class="form-label">Tipo de usuario</label>
-                <select class="form-control" name="rol" id="tipousuario">
-                    <option value="admin">Administrador del sistema</option>
-                    <option value="gerente">Gerente</option>
-                    <option value="cliente">cliente</option>
-                </select>
-            </div>
     </div>
-    <hr class="my-4">
-    | <button class="w-100 btn boton1 btn-lg" type="submit">Guardar datos</button>
-
-    </form>
-</div>
-
-</div>
 
 </section>
 {% endblock %}

@@ -8,8 +8,6 @@ def home(request):
 def verServicios(request):
     return render(request, 'servicios.html')
 
-def verInfomacionContacto(request):
-    return render(request, 'contactenos.html')
 
 
 def verInformacionEmpresa(request):
