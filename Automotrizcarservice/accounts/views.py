@@ -1,11 +1,22 @@
 from ast import Return
 from contextlib import redirect_stderr
-import email
+from email.message import EmailMessage
 from multiprocessing import context
 from django.shortcuts import render,redirect
 from accounts.models import Account
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from django.db import  IntegrityError
+
+from django.contrib.sites.shortcuts import get_current_site 
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.core.mail import EmailMessage, send_mail
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
+
+
+
 # Create your views here.
 
 def registrarse(request):
@@ -41,6 +52,26 @@ def registrarse(request):
                 user.rol = rol
                 user.save()
                 context['mensaje']='Usuario guardado con exito'
+
+                #modulo para mensajes
+                current_site = get_current_site(request)
+                mail_subject = 'Por favor activar tu cuenTa en el sistema de Automotriz carservice'
+
+                body = render_to_string('account_verification_email.html',{
+
+                    'user' : user,
+                    'domain' : current_site,
+                    'uid' : str(urlsafe_base64_encode(force_bytes(user.pk))),
+                    'token' : default_token_generator.make_token(user),
+                })
+                to_email = email
+                send_email = EmailMessage(mail_subject,body,to=[to_email])
+                send_email.send()
+
+                context = {
+                    'mensaje' : 'Bienvenido' + username + '. Favor activar su cuenta en el enlace enviado a su correo.'
+                }
+                return redirect(login)
             else:
                 context['alarma']= '¡ El correo ya existe!'
         
@@ -77,6 +108,19 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
+def activate(request, uidb64,token):
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = Account._default_manager.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, Account.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        return redirect('login')
+    else:
+        return redirect('registro')
 
 
 
