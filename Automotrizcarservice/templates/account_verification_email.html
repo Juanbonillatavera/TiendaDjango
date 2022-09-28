@@ -1,0 +1,17 @@
+
+
+{% autoescape off %}
+
+Hola {{ user.first_name }},
+
+Por favor activa tu cuenta dando clic en el siguiente enlace:
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+Gracias,
+
+El Administrador de etapa Productiva.
+
+{% endautoescape %}
+
+
+

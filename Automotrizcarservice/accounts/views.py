@@ -50,7 +50,12 @@ def registrarse(request):
             if not existe:
                 user=Account.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
                 user.rol = rol
-                user.save()
+                try:
+                    user.save()
+                except:
+                    user=None
+                    return render(request,'resgistro.html',{'alarma': 'Ya existe el usuario '})
+
                 context['mensaje']='Usuario guardado con exito'
 
                 #modulo para mensajes
