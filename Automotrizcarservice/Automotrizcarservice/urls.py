@@ -29,6 +29,7 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('servicios/', views.verServicios, name="servicios"),
     path('quienes_somos/',views.verInformacionEmpresa,name="nosotros" ),
+    path('contactenos/',views.verContactenos,name="contactenos" ),
     path('accounts/', include('accounts.urls')),
     path('productos/', include('appProductos.urls')),
     

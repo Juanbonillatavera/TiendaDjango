@@ -74,6 +74,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Automotrizcarservice.wsgi.application'
 AUTH_USER_MODEL = 'accounts.Account'
 
+#modulo email
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'automotrizcarservicel@gmail.com'
+EMAIL_HOST_PASSWORD = 'dqntiqxbehkwbyiy'
+EMAIL_USE_TLS = True
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 

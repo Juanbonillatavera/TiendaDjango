@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="col-sm">
+    <center>
+        <h5>Contáctense con Nosotros</h5>
+    </center>
+
+    <center>
+        <form action="https://mailthis.to/automotrizcarservicel@gmail.com" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Nombres y apellidos">Nombres y Apellidos</label>
+                    <input name="Nombres y Apellidos" type="text" class="form-control" id="inputEmail4"
+                        placeholder="Nombres y Apellidos" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Correo">Correo Electronico</label>
+                    <input name="Email" type="email" class="form-control" id="inputEmail4"
+                        placeholder="Correo Electronico" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="Telefono">Telefono de Contacto</label>
+                    <input name="Telefono" type="text" class="form-control" id="inputEmail4" placeholder="Telefono"
+                        required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Dirección">Direccion</label>
+                    <input name="Dirección" type="text" class="form-control" id="inputEmail4" placeholder="Direccion"
+                        required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Documento">Documento</label>
+                    <input name="Documento" type="text" class="form-control" id="inputEmail4" placeholder="Documento"
+                        required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Ciudad">Ciudad de residencia</label>
+                    <input name="ciudad " type="text" class="form-control" id="inputEmail4"
+                        placeholder="Ciudad de residencia" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="mensaje">Mensaje </label>
+                    <textarea name="Mensaje" class="form-control" id="mensaje" placeholder="Mensaje" required>
+
+                    </textarea>
+                </div>
+
+                
+                <div class="col-auto col-md-6">
+                    <label class="mr-sm-2" for="inlineFormCustomSelect">Seleccione su genero</label>
+                    <select name="Genero" class="form-control" id="inlineFormCustomSelect">
+                        <option selected>Genero...</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Transgenero">Transgenero</option>
+                        <option value="Mero macho">Mero macho</option>
+                    </select>
+                </div>
+            </div>
+            <center><button id="btnContacto" type="submit" class="btn btn-primary">Enviar Datos</button></center>
+        </form>
+    </center>
+</div>
+
+{% endblock %}
