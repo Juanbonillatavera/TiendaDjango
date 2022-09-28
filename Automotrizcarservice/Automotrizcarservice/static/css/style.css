@@ -87,3 +87,9 @@ button {
     width: 100%;
     max-width: 100px;
 }
+
+input .ingresar{
+    height: 40px;
+    background-color: #6c757d;  
+
+}
