@@ -14,5 +14,4 @@ def verInformacionEmpresa(request):
     return render(request, 'quienes_somos.html')
 
 
-def verContactenos(request):
-    return render(request,'contactenos.html')
+

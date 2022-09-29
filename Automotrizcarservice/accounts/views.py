@@ -128,6 +128,8 @@ def activate(request, uidb64,token):
         return redirect('registro')
 
 
+def verContactenos(request):
+    return render(request,'contactenos.html')
 
 
 

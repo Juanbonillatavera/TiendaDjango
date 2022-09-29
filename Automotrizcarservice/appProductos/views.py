@@ -2,7 +2,7 @@ from asyncio.windows_events import NULL
 from multiprocessing import context
 from operator import concat
 from django.shortcuts import render
-from .models  import Producto, Carrito 
+from .models  import Producto,Carrito 
 
 
 from django.http import JsonResponse
@@ -63,7 +63,8 @@ def verCarrito(request):
             unProducto={
             'cantidad': prod.cantidad,
             'icono': prod.producto.icono,
-            'nombre': prod.producto.precio,
+            'nombre': prod.producto.nombre,
+            'precio': prod.producto.precio,
             'unidad' : prod.producto.unidad,
             'total' : int (prod.cantidad) * int(prod.producto.precio),
             'prodId' : prod.producto.id,

@@ -16,9 +16,9 @@
     <thead>
         <tr>
             <th>Cantidad</th>
-            <th></th>
             <th>Producto</th>
-            <th>Precio Unit.</th>
+            <th>Precio</th>
+            <th>unidad</th>
             <th>Total</th>
             <th></th>
         </tr>
@@ -30,13 +30,13 @@
         <tr>
             <th><input type="number" name="cantidad" id="cantidad_{{prod.id}}" onchange="cambiarCantidad({{prod.id}})" value="{{prod.cantidad}}" min="0" style="width:80px;"></th>
             <td><img src="{{prod.icono.url}}" class="imgCarrito" alt="x"></td>
-            <td>{{prod.nombre}}</td>
+            <td>{{prod.precio}}</td>
             <td>{{prod.valor}}/{{prod.unidad}}</td>
             <td>{{prod.total}}</td>
 
             <td>
                 <a href="{% url 'eliminar' prod.id %}" class="btn btn-danger btn-carrito">Eliminar</a>
-                <a href="{% url 'producto' prod.id %}" class="btn btn-info btn-carrito">Detalle</a>
+                
             </td>
 
         </tr>
